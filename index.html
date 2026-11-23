@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Shiva prasad M, GenAI and Python backend engineer.">
+<title>Shiva prasad M — GenAI Engineer Portfolio</title>
+<style>
+:root{--bg:#0b1117;--panel:#111c25;--panel2:#15232e;--text:#edf3f5;--muted:#9aabb5;--line:#263744;--accent:#65d6c4;--accent2:#8ca9ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 42px));margin:auto}
+nav{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.brand{font-weight:750;letter-spacing:.3px;font-size:1.1rem}.brand span{color:var(--accent)}
+.navlinks{display:flex;gap:28px;color:var(--muted);font-size:.92rem}.navlinks a:hover{color:var(--accent)}
+.menu{display:none;color:var(--text);background:none;border:1px solid var(--line);padding:8px 12px;border-radius:9px}
+.hero{padding:100px 0 88px;display:grid;grid-template-columns:1.45fr .8fr;gap:50px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--accent);font-size:.82rem;font-weight:700;letter-spacing:1.7px;text-transform:uppercase}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent)}
+h1{font-size:clamp(3rem,7vw,5.8rem);line-height:.99;letter-spacing:-.065em;margin:23px 0 20px;font-weight:760}
+h1 span{color:var(--accent)}
+.lead{font-size:1.15rem;color:#c2cdd2;max-width:660px;margin:0 0 30px}
+.actions{display:flex;gap:13px;flex-wrap:wrap}.btn{padding:12px 19px;border-radius:9px;font-weight:700;font-size:.92rem;border:1px solid var(--line);display:inline-flex;align-items:center;gap:9px}.primary{background:var(--accent);color:#071411;border-color:var(--accent)}.secondary:hover{border-color:var(--accent);color:var(--accent)}
+.profile-card{background:linear-gradient(145deg,#172a35,#101a23);border:1px solid #2b414e;border-radius:22px;padding:28px;position:relative;overflow:hidden}
+.profile-card:before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:#65d6c414;right:-90px;top:-90px}
+.monogram{width:88px;height:88px;border-radius:22px;background:linear-gradient(135deg,#65d6c4,#8ca9ff);color:#071411;display:grid;place-items:center;font-size:2rem;font-weight:850;margin-bottom:22px}
+.profile-card h2{font-size:1.35rem;margin:0}.profile-card p{color:var(--muted);margin:4px 0 20px}.statline{border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;color:var(--muted);font-size:.9rem}.statline strong{color:var(--text)}
+section{padding:76px 0;border-top:1px solid var(--line)}.section-kicker{color:var(--accent);font-size:.78rem;text-transform:uppercase;letter-spacing:1.7px;font-weight:750}
+.section-title{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.045em;line-height:1.1;margin:10px 0 16px}
+.section-intro{color:var(--muted);max-width:700px;margin:0 0 34px}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}.about-copy,.info-box,.experience-card,.skill-card,.education-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:25px}
+.about-copy p{color:#bdc9cf;margin:0}.info-box h3,.skill-card h3{margin:0 0 16px;font-size:1.05rem}.chips{display:flex;flex-wrap:wrap;gap:9px}.chip{padding:7px 11px;border-radius:8px;background:#1a2b36;color:#c9d8dd;border:1px solid #2b414e;font-size:.86rem}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.skill-card p{color:var(--muted);font-size:.92rem;margin:0}.skill-icon{font-size:1.3rem;margin-bottom:12px;color:var(--accent)}
+.timeline{display:grid;gap:16px}.experience-card{display:grid;grid-template-columns:190px 1fr;gap:24px}.date{color:var(--accent);font-size:.87rem;font-weight:700}.company{font-size:1.2rem;font-weight:750;margin:0}.jobtitle{color:var(--muted);margin:2px 0 12px}.experience-card p,.experience-card li{color:#bdc9cf;font-size:.94rem}.experience-card ul{padding-left:19px;margin:9px 0 0}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.education-card h3{margin:0 0 6px}.education-card p{color:var(--muted);margin:0}
+.contact{background:linear-gradient(130deg,#142630,#101a23);border:1px solid #2b414e;border-radius:20px;padding:38px;display:flex;justify-content:space-between;align-items:center;gap:25px}.contact p{color:var(--muted);margin:8px 0 0}.contact h2{font-size:2rem;margin:0}
+footer{padding:28px 0;color:#71838d;font-size:.85rem;display:flex;justify-content:space-between;gap:12px}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding:70px 0}.profile-card{max-width:430px}.about-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr 1fr}.experience-card{grid-template-columns:1fr;gap:8px}}
+@media(max-width:560px){.navlinks{display:none}.menu{display:block}.skills-grid,.edu-grid{grid-template-columns:1fr}.contact{align-items:flex-start;flex-direction:column}.wrap{width:min(100% - 30px,1120px)}section{padding:58px 0}footer{flex-direction:column}}
+
+/* Retro Windows 2002 / Windows XP-inspired theme */
+:root{
+  --bg:#4f91c8;--panel:#ece9d8;--panel2:#f7f5eb;--text:#172b45;
+  --muted:#53677c;--line:#7f9db9;--accent:#1d5fa7;--accent2:#7fb5e5;
+}
+body{
+  background:
+    radial-gradient(ellipse at 18% 18%,rgba(255,255,255,.75) 0 4%,transparent 15%),
+    radial-gradient(ellipse at 75% 12%,rgba(255,255,255,.5) 0 3%,transparent 13%),
+    linear-gradient(180deg,#5aa4e2 0%,#9bd2f0 43%,#b5d98b 64%,#4c9a3d 100%);
+  background-attachment:fixed;
+  color:var(--text);
+  font-family:Tahoma,Verdana,Arial,sans-serif;
+}
+.wrap{
+  background:#f1efe4;
+  border:3px solid #245a9b;
+  box-shadow:0 0 0 1px #fff inset,5px 7px 22px rgba(0,25,65,.35);
+  margin-top:28px;margin-bottom:28px;
+}
+nav{
+  background:linear-gradient(180deg,#3c8de0 0%,#1764b5 48%,#0d438c 100%);
+  color:#fff;border-bottom:2px solid #073875;padding:0 18px;height:62px;
+}
+.brand{color:#fff;text-shadow:1px 1px #123c72}
+.brand span{color:#ffdc58}
+.navlinks{color:#fff;gap:7px}
+.navlinks a{padding:8px 11px;border:1px solid transparent;border-radius:3px}
+.navlinks a:hover{color:#fff;background:linear-gradient(#78b7f0,#276db6);border-color:#b8d8f5}
+.menu{color:#fff;border:1px solid #c4ddf4;background:linear-gradient(#72b4ef,#286bb2)}
+.hero{background:linear-gradient(180deg,#f8f7ef,#e9e6d8);padding:65px 38px;margin:0}
+.eyebrow,.section-kicker{color:#15569a}
+.dot{background:#2a8d36;box-shadow:0 0 8px #2a8d36}
+h1{color:#173e70;text-shadow:1px 1px #fff}
+h1 span{color:#1768ad}
+.lead{color:#3e5266}
+.profile-card{
+  background:linear-gradient(180deg,#fffdf4,#e4e0cf);
+  border:2px solid #8ba6c1;border-radius:4px;
+  box-shadow:2px 3px 0 rgba(30,65,100,.16);
+}
+.profile-card:before{background:#70b6ee22}
+.profile-card h2{color:#174e86}
+.profile-card p,.statline{color:#526477}
+.statline{border-color:#b9c6d0}
+.statline strong{color:#1d3f61}
+section{border-top:2px solid #d2d0c5}
+.section-title{color:#174e86}
+.section-intro{color:#526477}
+.about-copy,.info-box,.experience-card,.skill-card,.education-card{
+  background:linear-gradient(180deg,#fffef8,#eae7da);
+  border:1px solid #9aaec1;border-radius:4px;
+  box-shadow:1px 2px 0 rgba(30,65,100,.12);
+}
+.about-copy p,.experience-card p,.experience-card li{color:#3d5062}
+.info-box h3,.skill-card h3,.education-card h3{color:#174e86}
+.chip{
+  background:linear-gradient(#fff,#e0eaf4);color:#214c75;
+  border:1px solid #9eb6ce;border-radius:3px;
+}
+.experience-card .date{color:#155da4}
+.company{color:#173f6d}
+.jobtitle,.education-card p{color:#56697b}
+.skill-icon{color:#1768ad}
+.contact{
+  background:linear-gradient(180deg,#fffef7,#e4e1d5);
+  border:2px solid #8ba6c1;border-radius:4px;
+}
+.contact h2{color:#174e86}
+.contact p{color:#526477}
+.btn{border-radius:3px;font-family:Tahoma,Verdana,sans-serif;box-shadow:1px 2px 0 rgba(0,0,0,.14)}
+.primary{background:linear-gradient(180deg,#77b9f1,#1c65b1);border:1px solid #174c87;color:#fff;text-shadow:1px 1px #174c87}
+.primary:hover{filter:brightness(1.08)}
+.secondary{background:linear-gradient(#fff,#e2e8ef);color:#174e86;border:1px solid #8ba6c1}
+footer{background:#e5e2d5;color:#56697b;padding:18px 22px;border-top:1px solid #b3b0a4}
+@media(max-width:800px){.hero{padding:48px 22px}}
+@media(max-width:560px){.wrap{width:calc(100% - 14px);margin:7px auto}.hero{padding:42px 18px}}
+
+
+.profile-photo{
+  display:block;
+  width:132px;
+  height:150px;
+  object-fit:cover;
+  object-position:center 28%;
+  border:4px solid #fff;
+  outline:2px solid #7f9db9;
+  border-radius:3px;
+  box-shadow:2px 3px 0 rgba(30,65,100,.22);
+  margin:0 0 22px;
+  position:relative;
+  z-index:1;
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="brand" href="#home">SHIVA<span>.</span></a>
+  <div class="navlinks"><a href="#about">About</a><a href="#skills">Expertise</a><a href="#experience">Experience</a><a href="#freelance">Freelancing</a><a href="#contact">Contact</a></div>
+  <button class="menu" onclick="document.querySelector('.navlinks').style.display=document.querySelector('.navlinks').style.display==='flex'?'none':'flex'">Menu</button>
+</nav>
+<main>
+<header class="hero" id="home">
+  <div>
+    <div class="eyebrow"><span class="dot"></span> GenAI · Agentic AI · Python</div>
+    <h1>Shiva prasad<br><span>M.</span></h1>
+    <p class="lead">Building intelligent systems, enterprise AI solutions and dependable backend platforms. Focused on Retrieval-Augmented Generation, applied LLM systems and Python engineering.</p>
+    <div class="actions">
+      <a class="btn primary" href="#experience">Explore my work <span>↗</span></a>
+      <a class="btn secondary" href="https://www.linkedin.com/in/shivaprasdm" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>
+    </div>
+  </div>
+  <aside class="profile-card">
+    <img class="profile-photo" src="shiva-prasad-profile.png" alt="Shiva prasad M profile photograph">
+    <h2>GenAI / Agentic AI Engineer</h2>
+    <p>Senior Associate · PwC</p>
+    <div class="statline"><span>Based in</span><strong>Bengaluru, India</strong></div>
+    <div class="statline"><span>Core focus</span><strong>Enterprise AI</strong></div>
+  </aside>
+</header>
+
+<section id="about">
+  <div class="section-kicker">01 / About</div>
+  <h2 class="section-title">Turning complex data into<br>useful intelligence.</h2>
+  <div class="about-grid">
+    <div class="about-copy"><p>GenAI and Python backend engineer with 5+ years building enterprise data platforms, now focused on Retrieval-Augmented Generation (RAG) and applied LLM systems. Experienced in delivering RAG decision-intelligence pipelines and Natural-Language-to-SQL interfaces using FastAPI and Flask, backed by PostgreSQL and Azure Blob ingestion. Works across backend design, API development and data ingestion for enterprise-scale systems.</p></div>
+    <div class="info-box"><h3>Professional strengths</h3><div class="chips"><span class="chip">Team Leadership</span><span class="chip">Multithreading</span><span class="chip">Stakeholder Management</span><span class="chip">Backend Engineering</span><span class="chip">Enterprise Data</span></div></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-kicker">02 / Expertise</div>
+  <h2 class="section-title">Technologies & capabilities</h2>
+  <p class="section-intro">A selection of engineering areas and technologies described in the professional profile.</p>
+  <div class="skills-grid">
+    <article class="skill-card"><div class="skill-icon">✳</div><h3>Generative AI</h3><p>RAG, applied LLM systems, LangChain, LangGraph, vector databases and enterprise AI assistants.</p></article>
+    <article class="skill-card"><div class="skill-icon">⌘</div><h3>Backend Engineering</h3><p>Python, FastAPI, Flask, REST APIs, WebSockets and multithreaded application development.</p></article>
+    <article class="skill-card"><div class="skill-icon">▤</div><h3>Data Platforms</h3><p>PostgreSQL, Azure Blob Storage, data ingestion, analytics and enterprise data workflows.</p></article>
+    <article class="skill-card"><div class="skill-icon">⚙</div><h3>Dev & Delivery</h3><p>Docker, Git workflows, automated testing and data validation for reliable deployments.</p></article>
+    <article class="skill-card"><div class="skill-icon">⇄</div><h3>Intelligent Querying</h3><p>Natural-Language-to-SQL, information retrieval and decision-intelligence pipelines.</p></article>
+    <article class="skill-card"><div class="skill-icon">⌁</div><h3>Workflow Automation</h3><p>Python and NLP-powered automation, ETL workflow monitoring and orchestration.</p></article>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-kicker">03 / Career</div>
+  <h2 class="section-title">Professional experience</h2>
+  <p class="section-intro">Engineering roles and selected contributions from the supplied profile.</p>
+  <div class="timeline">
+    <article class="experience-card"><div class="date">Nov 2026 — Present<br>Bengaluru, India</div><div><h3 class="company">PwC</h3><div class="jobtitle">Senior Associate — Gen AI / Agentic AI Engineer</div><p>Current role in GenAI and Agentic AI engineering.</p></div></article>
+    <article class="experience-card"><div class="date">May 2025 — Oct 2026</div><div><h3 class="company">L&amp;T Technology Services</h3><div class="jobtitle">Generative AI Engineer</div><ul><li>Built a RAG-based decision-intelligence system over enterprise material data, combining document retrieval with Natural-Language-to-SQL.</li><li>Built an Enterprise API Assistant using LangChain, LangGraph, RAG and a vector database.</li><li>Designed backend services with Flask, FastAPI and PostgreSQL, including ingestion from Azure Blob Storage.</li><li>Implemented GenAI-driven analytics and data enrichment to improve data quality and accelerate decisions.</li></ul></div></article>
+    <article class="experience-card"><div class="date">Oct 2023 — May 2025<br>India</div><div><h3 class="company">Tata Consultancy Services</h3><div class="jobtitle">Senior Python Developer</div><ul><li>Developed foundational components for RAG-based information retrieval and intelligent data querying.</li><li>Designed Python and FastAPI backend services, REST APIs and WebSockets, with Docker and Git workflows.</li><li>Built automated test frameworks and data validation scripts for enterprise applications.</li></ul></div></article>
+    <article class="experience-card"><div class="date">Jan 2018 — Aug 2020<br>India</div><div><h3 class="company">NTT DATA</h3><div class="jobtitle">Python Developer</div><ul><li>Built a Python and NLP-powered API to detect and recover failed Ab Initio ETL workflows.</li><li>Designed and managed Ab Initio data pipelines, transformations and workflow orchestration.</li></ul></div></article>
+  </div>
+</section>
+
+<section id="freelance">
+  <div class="section-kicker">04 / Freelance services</div>
+  <h2 class="section-title">Let's build something<br>intelligent together.</h2>
+  <p class="section-intro">Available for freelance projects and collaborations involving Python backend development, Generative AI and enterprise data workflows.</p>
+  <div class="skills-grid">
+    <article class="skill-card"><div class="skill-icon">✳</div><h3>Generative AI & RAG</h3><p>Build knowledge assistants and RAG-powered applications that retrieve relevant information from your documents and data.</p></article>
+    <article class="skill-card"><div class="skill-icon">⌘</div><h3>Python Backend & APIs</h3><p>Develop backend services, REST APIs and application integrations using Python, FastAPI and Flask.</p></article>
+    <article class="skill-card"><div class="skill-icon">▤</div><h3>Data Ingestion & Automation</h3><p>Create data ingestion, validation and workflow automation solutions for reliable business processes.</p></article>
+    <article class="skill-card"><div class="skill-icon">⇄</div><h3>AI Assistants & NL-to-SQL</h3><p>Explore conversational interfaces that help users retrieve information and query business data in natural language.</p></article>
+    <article class="skill-card"><div class="skill-icon">⚙</div><h3>Backend Integration</h3><p>Connect services, databases and storage systems into maintainable application workflows.</p></article>
+    <article class="skill-card"><div class="skill-icon">✓</div><h3>Testing & Data Validation</h3><p>Improve application reliability with automated tests and data validation scripts.</p></article>
+  </div>
+  <div style="margin-top:24px"><a class="btn primary" href="https://www.linkedin.com/in/shivaprasdm" target="_blank" rel="noopener">Discuss a freelance project ↗</a></div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <div><div class="section-kicker">05 / Contact</div><h2>Let's connect.</h2><p>For professional networking and conversations about GenAI, Agentic AI and Python engineering.</p></div>
+    <a class="btn primary" href="https://www.linkedin.com/in/shivaprasdm" target="_blank" rel="noopener">Visit LinkedIn ↗</a>
+  </div>
+</section>
+</main>
+<footer><span>© 2026 Shiva prasad M</span><span>Freelance & professional portfolio · Bengaluru, India</span></footer>
+</div>
+</body>
+</html>
